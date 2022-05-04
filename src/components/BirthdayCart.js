@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { birthdayPersons } from './birthdayPersons';
 
@@ -10,7 +10,6 @@ const Container = styled.div`
 
   @media (max-width: 490px) {
     width: 90%;
-  
   }
 `;
 
@@ -70,6 +69,10 @@ const Clear = styled.button`
 
 const BirthdayCart = () => {
   const [persons, setPersons] = useState(birthdayPersons);
+
+  useEffect(() => {
+    document.title = 'Birthday Reminder';
+  }, []);
 
   return (
     <>
